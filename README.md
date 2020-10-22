@@ -1,4 +1,4 @@
-# Elite Lab 5: Forms, APIs, and Ajax
+# Elite Lab 6: Sessions
 
 ## Intro
 In this lab, we will be improving our chatrooms by creating persistent sessions. This concept is what drives a lot of our online interaction. Any time you log in, you are creating a session. This is what allows you to log in to reddit/facebook/gmail, and stay logged in (even if you close your browser).
