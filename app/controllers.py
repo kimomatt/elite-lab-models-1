@@ -22,10 +22,9 @@ def session():
 
 # DEFINE YOUR API HERE
 
-
 # Rest of the Ajax Routes #
 
-@app.route('/session/<string:token>/username/', methods=['GET'])
+@app.route('/sessions/<string:token>/username/', methods=['GET'])
 def get_username_from_token(token):
     username = SessionManager.get_username(token)
     return {"username": username}
@@ -62,7 +61,7 @@ def delete_message(message_id):
         abort(500)
 
 
-@app.route('/chat/<string:chat_id>', methods=['GET'])
+@app.route('/chats/<string:chat_id>', methods=['GET'])
 def get_chat_api(chat_id):
     result = MessageManager.filter_messages_by_chat_id(chat_id)
     response = []
@@ -71,7 +70,7 @@ def get_chat_api(chat_id):
     return {"messages": response}
 
 
-@app.route('/last/', methods=['GET'])
+@app.route('/messages/last/', methods=['GET'])
 def get_last_messages():
     num_messages = request.args.get('count', default=10)
     result = MessageManager.get_last_messages(num_messages)
@@ -80,7 +79,7 @@ def get_last_messages():
         response.append(message.to_dict())
     return {"messages": response}
 
-@app.route('/chat/<string:chat_id>/last', methods=['GET'])
+@app.route('/chats/<string:chat_id>/last/', methods=['GET'])
 def get_last_messages_in_chat(chat_id):
     num_messages = request.args.get('count', default=50)
     result = MessageManager.get_last_messages_in_chat(chat_id, num_messages)
@@ -89,7 +88,7 @@ def get_last_messages_in_chat(chat_id):
         response.append(message.to_dict())
     return {"messages": response}
 
-@app.route('/chat/<string:chat_id>/updates', methods=['GET'])
+@app.route('/chats/<string:chat_id>/updates/', methods=['GET'])
 def get_message_updates_in_chat(chat_id):
     last_id = request.args.get('ref_id', default=None)
     if not last_id:

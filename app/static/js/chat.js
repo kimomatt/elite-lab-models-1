@@ -8,11 +8,11 @@ $(function () {
   var updateLock = false;
 
   // Backend API URLs
-  var baseUrl = 'http://127.0.0.1:5000/';
-  var createMessageUrl = `${baseUrl}messages/`;
-  var refreshMessagesUrl = `${baseUrl}chat/${chatroomID}/updates`;
-  var initMessagesUrl = `${baseUrl}chat/${chatroomID}/last`;
-  var sessionTokenUrl = `${baseUrl}session/`;
+  var baseUrl = 'http://127.0.0.1:5000';
+  var createMessageUrl = `${baseUrl}/messages/`;
+  var refreshMessagesUrl = `${baseUrl}/chats/${chatroomID}/updates/`;
+  var initMessagesUrl = `${baseUrl}/chats/${chatroomID}/last/`;
+  var sessionTokenUrl = `${baseUrl}/sessions/`;
 
   // jQuery Variables
   var $messages, $messageInput, $logoutButton;
@@ -23,6 +23,9 @@ $(function () {
   $messageInput.on('submit', function (e) {
     e.preventDefault();
     var text = $('input:text').val();
+    if (!text) {
+      return;
+    }
     console.log(text);
     postMessage(text);
     $('input:text').val('');
@@ -32,7 +35,7 @@ $(function () {
   $logoutButton.on('click', function () {
     clearCookie();
     // Redirect back to session create
-    window.location.replace(baseUrl + 'session-page/');
+    window.location.replace(baseUrl + '/session-page/');
   });
 
   function scrollChatToBottom() {
@@ -102,7 +105,7 @@ $(function () {
     if (!token) {
       console.log("No token found: Redirecting back to session create");
       // If no token, then redirect to create session
-      window.location.replace(baseUrl + 'session-page/');
+      window.location.replace(baseUrl + '/session-page/');
     }
     console.log("Here's the token: " + token);
     var urlWithToken = sessionTokenUrl + token + '/username/'

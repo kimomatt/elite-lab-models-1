@@ -23,8 +23,12 @@ main li {
   background: #FEFEFE;
 }
 
+#username-input {
+  max-width: 600px;
+}
+
 #chat-window {
-  height: 80vh;
+  height: 65vh;
   overflow-y: scroll;
 }
 

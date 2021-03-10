@@ -1,7 +1,7 @@
 $(function () {
   // Backend API URLs
-  var baseUrl = 'http://127.0.0.1:5000/';
-  var createSessionUrl = ''; // DEFINE HERE
+  var baseUrl = 'http://127.0.0.1:5000';
+  var createSessionUrl = ""; // DEFINE HERE
 
   // jQuery Variables
   var $messages, $messageInput;
@@ -26,6 +26,7 @@ $(function () {
   function createSession(username) {
     // Create new message in this channel in backend
     console.log("Creating token for: " + username);
+    console.log("Sending to URL:" + createSessionUrl);
 
     // Create a Javascript object to use as the request body (similar to python dict)
     requestBody = {}; // DEFINE HERE
@@ -46,8 +47,8 @@ $(function () {
       // IMPORTANT: These functions do not run immediately after you call it. Instead they
       //     run after a successful response is received. That means that the request needs to be
       //     sent to the server and the server needs to respond, before you get your result.
-      //     This is called asynchronous. You can not use the results immediately, you have to wait
-      //     until after the response is sent back. Please talk to me if this is still fuzzy.
+      //     This is called asynchronous. You can not use the results immediately; you have to wait
+      //     until after the response is sent back. Feel free to talk to me if this is still fuzzy.
       success: function (data) {
         console.log("Got token: " + data.token);
         // Set a cookie with response data from the request

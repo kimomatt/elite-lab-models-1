@@ -100,7 +100,7 @@ class SessionManager:
         )
         db.session.add(session)
         db.session.commit()
-        return token
+        return session
 
     @staticmethod
     def get_username(token):
