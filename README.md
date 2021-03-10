@@ -99,7 +99,7 @@ python3 -m flask run
 
 * Send some messages as yourself in this session
 
-* Open the same webpage in a different browser and check if you are still logged in as the same person
+* Open the same webpage in a different browser window (or tab) and check if you are still logged in as the same person. Also, try opening an incognito browser and see whether or not you're still logged in!
 
 * You're done!
 
