@@ -4,10 +4,10 @@
  */
 
 body {
-  background: #868686;
+  background: #FEFEFE;
 }
 
-li {
+main li {
   color: #000;
   font-size: 20px;
   list-style-type: none;
@@ -24,7 +24,7 @@ li {
 }
 
 #chat-window {
-  height: 70vh;
+  height: 80vh;
   overflow-y: scroll;
 }
 
@@ -43,7 +43,7 @@ li {
 
 .own-message .message-box {
   text-align: right;
-  background-color: #09f;
+  background-color: rgb(129, 202, 250);
 }
 
 .participant-message {

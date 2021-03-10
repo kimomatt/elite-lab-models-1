@@ -1,63 +1,26 @@
-<!doctype html>
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="utf-8">
-  <title>{% block title %}{% endblock %}</title>
+{% block scripts %}
+<script type="text/javascript" src="/static/js/session.js"></script>
+{% endblock %}
 
-  <!-- meta -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <!-- /meta -->
+{% block styles %}
+<link type="text/css" rel="stylesheet" href="/static/css/style.css" />
+{% endblock %}
 
-  <!-- styles -->
-  <link type="text/css" rel="stylesheet" href="/static/css/bootstrap.css">
-  <link type="text/css" rel="stylesheet" href="/static/css/style.css" />
-  <!-- /styles -->
+{% block content %}
+<div id="content" role="main" class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Enter Channel</h1>
 
-  <!-- favicons -->
-  <link rel="shortcut icon" href="/static/ico/favicon.png">
-  <!-- /favicons -->
-
-</head>
-
-<body>
-
-  <!-- Begin page content -->
-  <main id="content" role="main" class="container">
-
-    <div class="row">
-      <div class="col">
-        <h1>Enter Channel</h1>
-
-        <form class="input-group mb-3" id="username-input">
-          <input type="text" class="form-control" placeholder="Your Username">
-          <div class="input-group" style="margin-top: 20px;">
-            <input type="submit" class="btn btn-outline-secondary" value="Enter Channel" />
-          </div>
-        </form>
-      </div>
+      <form class="input-group mb-3" id="username-input">
+        <input type="text" class="form-control" placeholder="Your Username">
+        <div class="input-group" style="margin-top: 20px;">
+          <input type="submit" class="btn btn-outline-secondary" value="Enter Channel" />
+        </div>
+      </form>
     </div>
-    </div>
-
-  </main>
-
   </div>
-
-  <!-- scripts -->
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script>
-    window.jQuery || document.write(
-      '<script type="text/javascript" src="/static/js/libs/jquery-1.11.1.min.js"><\/script>')
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-  <script type="text/javascript" src="/static/js/bootstrap.js" defer></script>
-  <script type="text/javascript" src="/static/js/session.js"></script>
-  <!-- <script type="text/javascript" src="/static/js/plugins.js" defer></script>
-  <script type="text/javascript" src="/static/js/script.js" defer></script> -->
-  {% block scripts %}{% endblock %}
-  <!-- /scripts -->
-
-</body>
-
-</html>
+</div>
+{% endblock %}
