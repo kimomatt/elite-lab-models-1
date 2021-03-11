@@ -29,7 +29,7 @@ Your task is to create the APIs that the web page can use to create session toke
 
 Lab is complete when you are able to succesfully:
 * Enter a chatroom with a username
-* Open up the chatroom in a separate browser and still be logged in as the same user
+* Open up the chatroom in a separate window or tab (but same browser) and still be logged in as the same user
 
 You will be editing these files:
 * `app/static/js/session.js`
@@ -99,7 +99,7 @@ python3 -m flask run
 
 * Send some messages as yourself in this session
 
-* Open the same webpage in a different browser window (or tab) and check if you are still logged in as the same person. Also, try opening an incognito browser and see whether or not you're still logged in!
+* Open the same webpage in a different window or tab (but same browser) and check if you are still logged in as the same person. Also, try opening an incognito browser and see whether or not you're still logged in!
 
 * You're done!
 
