@@ -21,7 +21,12 @@ def session():
 # ------------ Ajax Routes ------------ #
 
 # DEFINE YOUR API HERE
-
+@app.route('/sessions/', methods=['POST'])
+def create_session():
+    body = request.json
+    username = body['username']
+    session = SessionManager.create_session(username)
+    return {"token": session.token }
 # Rest of the Ajax Routes #
 
 @app.route('/sessions/<string:token>/username/', methods=['GET'])

@@ -1,7 +1,7 @@
 $(function () {
   // Backend API URLs
   var baseUrl = 'http://127.0.0.1:5000';
-  var createSessionUrl = ""; // DEFINE HERE
+  var createSessionUrl = baseUrl + '/sessions/'; // DEFINE HERE
 
   // jQuery Variables
   var $messages, $messageInput;
@@ -29,7 +29,7 @@ $(function () {
     console.log("Sending to URL:" + createSessionUrl);
 
     // Create a Javascript object to use as the request body (similar to python dict)
-    requestBody = {}; // DEFINE HERE
+    requestBody = {username: username}; // DEFINE HERE
 
     // $ stands for jquery. It is shorthand for calling the library
     // The function we are calling is "ajax". It allows us to make ajax requests,
